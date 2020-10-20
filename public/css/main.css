@@ -93,7 +93,7 @@ footer {
   padding: 2rem 0;
 }
 
-#strftime, #help {
+#datetime, #help {
   display: none;
 }
 

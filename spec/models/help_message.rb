@@ -1,4 +1,4 @@
-require './strftimer'
+require './datetimer'
 
 describe HelpMessage do
   describe "#message" do
