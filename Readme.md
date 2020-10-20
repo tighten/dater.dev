@@ -1,4 +1,4 @@
-[dater.dev](https://dater.dev)
+[datetimer.dev](https://datetimer.dev)
 
 A simple tool to generate PHP [datetime](https://www.php.net/manual/en/datetime.format.php) directives from a given example date.
 
