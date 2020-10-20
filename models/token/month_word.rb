@@ -6,7 +6,7 @@ module Token
     ABBR_MONTH_NAME = /^(#{::Date::ABBR_MONTHNAMES.compact.join('|')})$/i
 
     def translation
-      ["%", case_directive, letter_directive].join
+      ["", case_directive, letter_directive].join
     end
 
     def date_group
@@ -22,9 +22,9 @@ module Token
     def letter_directive
       case value
       when MONTH_NAME
-        "B"
+        "F"
       when ABBR_MONTH_NAME
-        "b"
+        "M"
       end
     end
   end

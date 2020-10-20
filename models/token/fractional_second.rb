@@ -4,9 +4,9 @@ module Token
 
     def translation
       if value.length == 3
-        "%L"
-      else
-        "%#{value.length}N"
+        "v"
+      else value.length == 6
+        "u"
       end
     end
   end

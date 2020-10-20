@@ -6,7 +6,7 @@ module Token
     ABBR_DAY_NAME = /^(#{::Date::ABBR_DAYNAMES.join('|')})$/i
 
     def translation
-      ["%", case_directive, letter_directive].join
+      ["", case_directive, letter_directive].join
     end
 
     private
@@ -18,9 +18,9 @@ module Token
     def letter_directive
       case value
       when DAY_NAME
-        "A"
+        "l"
       when ABBR_DAY_NAME
-        "a"
+        "D"
       end
     end
   end

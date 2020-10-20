@@ -1,4 +1,4 @@
-require './strftimer'
+require './datetimer'
 
 describe Translator do
   describe "#valid?" do
