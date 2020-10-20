@@ -5,9 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var output = document.getElementById("output");
   var instructions = document.getElementById("instructions");
-  var strftime = document.getElementById("strftime");
+  var datetime = document.getElementById("datetime");
   var directives = document.getElementById("directives");
-  var date = document.getElementById("date");
   var help = document.getElementById("help");
 
   function processQuery(e) {
@@ -44,9 +43,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateSuccess(data) {
     instructions.style.display = "none";
-    strftime.style.display = "inline";
+    datetime.style.display = "inline";
     directives.textContent = data.translation;
-    date.textContent = data.date;
 
     if (data.help) {
       help.innerHTML = data.help;
@@ -61,9 +59,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function updateFailure() {
     instructions.style.display = "inline";
-    strftime.style.display = "none";
+    datetime.style.display = "none";
     directives.textContent = "";
-    date.textContent = "";
     help.textContent = "";
     help.style.display = "none";
     output.style.opacity = "1";

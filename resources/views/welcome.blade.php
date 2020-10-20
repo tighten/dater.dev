@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>dater.dev | A PHP date generator</title>
+    <title>datetimer.dev | A PHP date generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
     <link href="/css/main.css" media="all" rel="stylesheet" type="text/css">
     <script src="/js/main.js"></script>
@@ -8,26 +8,25 @@
   </head>
   <body>
     <header>
-      <h1>dater.dev</h1>
+      <h1>datetimer.dev - PHP DateTime Formatter</h1>
       <h2>
         A PHP
-        <a href="https://www.php.net/manual/en/function.date.php">date</a>
+        <a href="https://www.php.net/manual/en/datetime.format.php" target="_blank">DateTime Format</a>
         generator
       </h2>
     </header>
 
     <main>
-      <input type="text" id="query" placeholder="e.g. 20 Oct 2020, 04:51"
-        value="" autocomplete="off" autofocus />
+      <input type="text" id="query" placeholder="e.g. {{ date('j M Y, G:i') }}"
+        value="" autocomplete="off" autofocus>
 
       <div id="output" class="output">
         <span id="instructions">
           Enter a date in the format you need
         </span>
 
-        <span id="strftime">
-          $date = new DateTime('<span id="date"></span>');<br>
-          echo $date->format("<strong id="directives"></strong>");
+        <span id="datetime">
+          new DateTime()->format("<strong id="directives"></strong>");
         </span>
 
         <p id="help">
@@ -36,7 +35,7 @@
     </main>
 
     <footer>
-      <a href="https://github.com/tighten/dater.dev">GitHub</a>
+      <a href="https://github.com/tighten/datetimer.dev">GitHub</a>
       ·
       <a href="https://tighten.co">tighten.co</a>
     </footer>
