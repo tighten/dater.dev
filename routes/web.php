@@ -1,18 +1,18 @@
 <?php
 
+use App\Translator;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('translate', function () {
+    $translator = new Translator(request('query'));
+
+    return response()->json([
+        'date' => '2020-01-01',
+        'help' => $translator->helpMessage(),
+        'translation' => $translator->translation(),
+    ]);
 });
