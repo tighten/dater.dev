@@ -3,7 +3,7 @@ module Token
     include Token::Base
 
     def translation
-      value.include?(":") ? "%:z" : "%z"
+      value.include?(":") ? "P" : "O"
     end
   end
 end

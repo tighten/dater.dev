@@ -3,7 +3,7 @@ module Token
     include Token::Base
 
     def translation
-      valid_time? ? "%H%M" : value
+      valid_time? ? "Hi" : value
     end
 
     private

@@ -3,7 +3,7 @@ module Token
     include Token::Base
 
     def translation
-      "%M"
+      "i"
     end
   end
 end

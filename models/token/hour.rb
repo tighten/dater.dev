@@ -6,9 +6,9 @@ module Token
     def translation
       case value.length
       when 1
-        meridian_present? ? "%-l" : "%-k"
+        meridian_present? ? "g" : "G"
       when 2
-        meridian_present? ? "%I" : "%H"
+        meridian_present? ? "h" : "H"
       end
     end
 

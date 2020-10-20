@@ -8,9 +8,9 @@ module Token
     def translation
       case value
       when UPPERCASE_REGEXP
-        "%p"
+        "A"
       when LOWERCASE_REGEXP
-        "%P"
+        "a"
       end
     end
   end

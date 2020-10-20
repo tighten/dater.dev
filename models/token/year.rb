@@ -5,9 +5,9 @@ module Token
     def translation
       case value.length
       when 2
-        "%y"
+        "y"
       when 4
-        "%Y"
+        "Y"
       end
     end
 
