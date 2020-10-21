@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Token\Date;
+
 /*
  * https://github.com/edforshaw/strftimer.com/blob/master/models/date_translator.rb
  */
@@ -16,6 +18,6 @@ class DateTranslator
 
     public function translation()
     {
-        return "date translated version of ({$this->query})";
+        return new Date($this->query)->translation();
     }
 }

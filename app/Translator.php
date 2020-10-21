@@ -17,7 +17,7 @@ class Translator
 
     public function valid()
     {
-        return ! is_null($this->query) && ! empty($this->query) && $this->query != $this->translation();
+        return $this->query && $this->query != $this->translation();
     }
 
     public function translation()

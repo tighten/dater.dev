@@ -10,8 +10,12 @@ Route::get('/', function () {
 Route::get('translate', function () {
     $translator = new Translator(request('query'));
 
-    return response()->json([
-        'help' => $translator->helpMessage(),
-        'translation' => $translator->translation(),
-    ]);
+    if ($translator->valid()) {
+        return response()->json([
+            'help' => $translator->helpMessage(),
+            'translation' => $translator->translation(),
+        ]);
+    }
+
+    abort(500);
 });
