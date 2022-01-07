@@ -2,6 +2,9 @@
 
 namespace App;
 
+use DateTime;
+use DateTimeZone;
+
 // https://github.com/edforshaw/strftimer.com/blob/master/constants.rb
 class Constants
 {
@@ -49,8 +52,24 @@ class Constants
         return $dayWords;
     }
 
-    public function timeZones()
+    public static function timezonesAbbr()
     {
-        return ['@todo'];
+        // @todo this doesn't return all timezones
+        // https://randomdrake.com/2008/08/06/time-zone-abbreviation-difficulties-with-php/
+        $timezones = timezone_identifiers_list();
+        $abbreviations = [];
+
+        $dateTime = new DateTime;
+        foreach ($timezones as $timezone) {
+            $dateTime->setTimeZone(new DateTimeZone($timezone));
+            $abbr = $dateTime->format('T');
+            if (! in_array($abbr, $abbreviations) && preg_match('/^\w+/', $abbr)) {
+                $abbreviations[] = $abbr;
+            }
+        }
+
+        return $abbreviations;
+
+        // return DateTimeZone::listIdentifiers();
     }
 }

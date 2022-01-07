@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Token\Time;
+
 /*
  * https://github.com/edforshaw/strftimer.com/blob/master/models/time_translator.rb
  */
@@ -16,6 +18,6 @@ class TimeTranslator
 
     public function translation()
     {
-        return "time translated version of ({$this->query})";
+        return (new Time($this->query))->translation();
     }
 }
