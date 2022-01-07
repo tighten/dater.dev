@@ -26,7 +26,7 @@
         </span>
 
         <span id="datetime">
-          new DateTime()->format("<strong id="directives"></strong>");
+          (new DateTime())->format("<strong id="directives"></strong>");
         </span>
 
         <p id="help">

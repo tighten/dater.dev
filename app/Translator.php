@@ -43,8 +43,8 @@ class Translator
     {
         $output = $this->query;
 
-        $output = (new IsoTranslator($output))->translation();
-        $output = (new TimeTranslator($output))->translation();
+        // $output = (new IsoTranslator($output))->translation();
+        // $output = (new TimeTranslator($output))->translation();
         $output = (new DateTranslator($output))->translation();
 
         return $output;

@@ -18,6 +18,6 @@ class DateTranslator
 
     public function translation()
     {
-        return new Date($this->query)->translation();
+        return (new Date($this->query))->translation();
     }
 }

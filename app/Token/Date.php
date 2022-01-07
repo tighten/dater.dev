@@ -2,32 +2,53 @@
 
 namespace App\Token;
 
+use App\Constants;
+
 class Date
 {
     // @todo import token.base and token.composite, whatever they do
 
-    const WORD_BOUNDARY_REGEXP = "/\b//";
-    const DAY_WORDS_REGEXP = ;
-    const ORDINAL_DAY_REGEXP = "/^\d{1,2}(?:st|nd|rd|th)$//";
-    const ONE_OR_TWO_DIGIT_REGEXP = "/^\d{1,2}$//"
-    const FOUR_DIGIT_YEAR_REGEXP = "/^[1-9]\d{3}$//"
-    const EIGHT_DIGIT_REGEXP = "/^\d{8}$//";
+    public const ORDINAL_DAY_REGEXP = '/\b\d{1,2}(?:st|nd|rd|th)\b/';
+    public const ONE_OR_TWO_DIGIT_REGEXP = '/\b\d{1,2}\b/';
+    public const FOUR_DIGIT_YEAR_REGEXP = '/\b[1-9]\d{3}\b/';
+    public const EIGHT_DIGIT_REGEXP = '/\b\d{8}\b/';
+
+    private $query;
+
+    public function __construct($query)
+    {
+        $this->query = $query;
+    }
 
     public static function dayWordsRegexp()
     {
-        // @todo real join from Constants class
-        return "/^(#{Constants::DAY_WORDS.join('|')})$/i";
+        return '/(' . implode('|', Constants::dayWords()) . ')/i';
     }
 
-    public static function timezoneAbbrRegexp()
+    public static function dayWordsAbbrRegexp()
     {
-        // @todo real join from Constants class
-        return "/^(#{Constants::TIME_ZONES.join('|')})$//";
+        return '/(' . implode('|', Constants::dayWordsAbbr()) . ')/i';
+    }
+
+    public static function monthWordsRegexp()
+    {
+        return '/(' . implode('|', Constants::monthWords()) . ')/i';
+    }
+
+    public static function monthWordsAbbrRegexp()
+    {
+        return '/(' . implode('|', Constants::monthWordsAbbr()) . ')/i';
     }
 
     public function translation()
     {
+        $output = preg_replace(self::monthWordsRegexp(), 'F', $this->query);
+        $output = preg_replace(self::monthWordsAbbrRegexp(), 'M', $output);
+        $output = preg_replace(self::dayWordsRegexp(), 'l', $output);
+        $output = preg_replace(self::dayWordsAbbrRegexp(), 'D', $output);
+        $output = preg_replace(self::FOUR_DIGIT_YEAR_REGEXP, 'Y', $output);
 
+        return $output;
     }
 
     private function substringArray()
