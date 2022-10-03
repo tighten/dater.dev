@@ -52,6 +52,7 @@ class Date
         $output = preg_replace(self::ONE_OR_TWO_DIGIT_REGEXP, 'j', $output);
         $output = preg_replace(self::FOUR_DIGIT_YEAR_REGEXP, 'Y', $output);
         $output = preg_replace(self::TWO_DIGIT_YEAR_REGEXP, 'y', $output);
+        $output = preg_replace(self::ORDINAL_DAY_REGEXP, 'jS', $output);
 
         return $output;
     }

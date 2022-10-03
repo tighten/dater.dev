@@ -8,8 +8,8 @@ class Time
 {
     public const MERIDIAN_REGEXP = '(?:am|pm)\b';
     public const MERIDIAN_UPPERCASE_REGEXP = '(?:AM|PM)\b';
-    public const ONE_DIGIT_REGEXP = '/\b\d(\b|' . self::MERIDIAN_REGEXP . ')/i';
-    public const TWO_DIGIT_REGEXP = '/\b\d{2}(\b|' . self::MERIDIAN_REGEXP . ')/i';
+    public const ONE_DIGIT_REGEXP = '/\b\d(' . self::MERIDIAN_REGEXP . ')/i';
+    public const TWO_DIGIT_REGEXP = '/\b\d{2}(' . self::MERIDIAN_REGEXP . ')/i';
     public const THREE_OR_MORE_DIGIT_REGEXP = '/\b\d{3,}\b/';
     public const SIX_DIGIT_REGEXP = '/\b\d{6}\b/';
     public const ONE_DIGIT_TIME_WITH_COLON_REGEXP = '/\b\d:\d{2}/';

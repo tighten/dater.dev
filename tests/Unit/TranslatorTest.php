@@ -77,22 +77,23 @@ class TranslatorTest extends TestCase
             ['1pm', 'ga'],
             ['08am', 'ha'],
             ['5PM', 'gA'],
+
+            ['1st', 'jS'],
+            ['1st Jan', 'jS M'],
+            ['1st January', 'jS F'],
+            ['1st Jan 2020', 'jS M Y'],
+            ['1st January 2020', 'jS F Y'],
+            ['January 1st 2020', 'F jS Y'],
+            ['Tue 1st January 2020', 'D jS F Y'],
+            ['Tuesday 1st January 2020', 'l jS F Y'],
+            ['Tuesday, 1st January 2020', 'l, jS F Y'],
+            ['Mon 31st DEC', 'D jS M'],
+
+            ['1 Jan', 'j M'],
+            ['01 Jan', 'd M'],
+            ['12 Jan', 'j M'],
+
             // Converted above here to correct assertions
-
-            // ['1st', '\#{mytime.day.ordinalize}'],
-            // ['1st Jan', '\#{mytime.day.ordinalize} b'],
-            // ['1st January', '\#{mytime.day.ordinalize} B'],
-            // ['1st Jan 2020', '\#{mytime.day.ordinalize} b Y'],
-            // ['1st January 2020', '\#{mytime.day.ordinalize} B Y'],
-            // ['January 1st 2020', 'B \#{mytime.day.ordinalize} Y'],
-            // ['Tue 1st January 2020', 'a \#{mytime.day.ordinalize} B Y'],
-            // ['Tuesday 1st January 2020', 'A \#{mytime.day.ordinalize} B Y'],
-            // ['Tuesday, 1st January 2020', 'A, \#{mytime.day.ordinalize} B Y'],
-            // ['Mon 31st DEC', 'a \#{mytime.day.ordinalize} ^b'],
-
-            // ['1 Jan', 'j M'],
-            // ['01 Jan', 'J b'],
-            // ['12 Jan', 'd b'],
 
             // ['Jan 13', 'b y'],
             // ['Jan 09', 'b y'],
