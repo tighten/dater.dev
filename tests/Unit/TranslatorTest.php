@@ -61,23 +61,23 @@ class TranslatorTest extends TestCase
 
             ['UTC', 'T'],
 
+            ['0800', 'Hi'],
+            ['0959', 'Hi'],
+
+            ['01:13', 'h:i'],
+            ['10:13', 'h:i'],
+            ['1:13', 'g:i'],
+
+            ['10:13pm', 'h:ia'],
+            ['01:13pm', 'h:ia'],
+            ['1:13pm', 'g:ia'],
+            ['1:13PM', 'g:iA'],
+            ['10:13 pm', 'h:i a'],
+            ['1:13 pm', 'g:i a'],
+            ['1pm', 'ga'],
+            ['08am', 'ha'],
+            ['5PM', 'gA'],
             // Converted above here to correct assertions
-            // ['0800', 'Hi'],
-            // ['0959', 'Hi'],
-
-            // ['01:13', 'H:i'],
-            // ['10:13', 'H:i'],
-            // ['1:13', 'k:i'],
-
-            // ['10:13pm', 'I:Ma'],
-            // ['01:13pm', 'I:Ma'],
-            // ['1:13pm', 'l:Ma'],
-            // ['1:13PM', 'l:MA'],
-            // ['10:13 pm', 'I:M a'],
-            // ['1:13 pm', 'l:M a'],
-            // ['1pm', 'la'],
-            // ['08am', 'Ia'],
-            // ['5PM', 'lA'],
 
             // ['1st', '\#{mytime.day.ordinalize}'],
             // ['1st Jan', '\#{mytime.day.ordinalize} b'],

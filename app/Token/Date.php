@@ -11,6 +11,7 @@ class Date
     public const ORDINAL_DAY_REGEXP = '/\b\d{1,2}(?:st|nd|rd|th)\b/';
     public const TWO_DIGIT_LEADING_ZERO_REGEXP = '/\b0\d\b/';
     public const ONE_OR_TWO_DIGIT_REGEXP = '/\b\d{1,2}\b/';
+    public const TWO_DIGIT_YEAR_REGEXP = '/\b\d{2}\b/';
     public const FOUR_DIGIT_YEAR_REGEXP = '/\b[1-9]\d{3}\b/';
     public const EIGHT_DIGIT_REGEXP = '/\b\d{8}\b/';
 
@@ -50,6 +51,7 @@ class Date
         $output = preg_replace(self::TWO_DIGIT_LEADING_ZERO_REGEXP, 'd', $output);
         $output = preg_replace(self::ONE_OR_TWO_DIGIT_REGEXP, 'j', $output);
         $output = preg_replace(self::FOUR_DIGIT_YEAR_REGEXP, 'Y', $output);
+        $output = preg_replace(self::TWO_DIGIT_YEAR_REGEXP, 'y', $output);
 
         return $output;
     }
