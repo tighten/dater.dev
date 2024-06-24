@@ -36,14 +36,14 @@ class Translator
     {
         // @todo: figure out what this class is doing to extract a message from a translation
         // HelpMessage.new(translation).message
-        return 'Help message yay!';
+        return 'WIP :-)';
     }
 
     protected function buildTranslation()
     {
         $output = $this->query;
 
-        $output = (new IsoTranslator($output))->translation();
+        // $output = (new IsoTranslator($output))->translation();
         $output = (new TimeTranslator($output))->translation();
         $output = (new DateTranslator($output))->translation();
 
